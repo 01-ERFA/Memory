@@ -17,7 +17,11 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 2%;
+    /* margin-left: 2%; */
+    padding: 20px;
+    font-family: 'Alkatra', Georgia, 'Times New Roman', Times, serif;
+    font-size: 2.4rem;
+    color:rgb(192, 187, 56)
 }
 
 .navbar-primary > ul{
@@ -41,6 +45,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    color: rgb(211, 79, 79)
 }
 
 #mobile-menu{
