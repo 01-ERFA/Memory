@@ -1,18 +1,7 @@
-// https://www.esimagenes.com/imagenes/pokemon-png
-
-// import { img } from '../img/'
-
-// export const cards =  [
-//     {
-//         name: '',
-//         img: 'img/transform-0/.png'
-//     }
-// ]
-
 export const languages = {
     header: {
         spanish: {
-            title: 'spanish',
+            title: 'M&K',
             navbar: {
                 Games: {
                     name:'Juegos',
@@ -21,12 +10,21 @@ export const languages = {
             }
         }, 
         english: {
-            title: 'english',
+            title: 'M&K',
             navbar: {
                 Games: {
                     name:'VideoGames'
                 }
             }
+        }
+    },
+
+    home: {
+        spanish: {
+            title: 'Guardianes de la Memoria'
+        },
+        english: {
+            title: 'Memory Keepers'
         }
     },
 
