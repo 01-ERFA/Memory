@@ -1,0 +1,18 @@
+.noscript {
+    min-height: 100%;
+    display: flex;
+    font-family: 'Alkatra', Georgia, 'Times New Roman', Times, serif;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+}
+@media (min-width: 760px) {
+    .noscript {
+        font-size: 3rem;
+    }   
+}
+@media (min-width: 1300px) {
+    .noscript {
+        font-size: 4.5rem;
+    }
+}
