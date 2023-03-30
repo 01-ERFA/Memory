@@ -33,13 +33,3 @@ export const languages = {
         default_value_language: 'english'
     }
 }
-
-// history , fecha, path, tiempo utilizado
-export const data_history = {
-    history: {},
-    default: {
-        path: '/',
-        title: 'Memory'
-    }
-
-}
