@@ -80,7 +80,8 @@
         inset: 0 0 0 30%;
         flex-direction: column;
         padding: min(6vh, 10rem) 1.5em;
-        background: hsl(0 0% 0% / 0.75);
+        background: hsl(0 0% 100% / 0.1);
+
 
         --gap: 2.5em;
 
@@ -98,7 +99,7 @@
 }
 
 @supports(backdrop-filter: blur(0.5rem)){
-    @media (max-width: 35em) {
+    @media (max-width: 760px) {
         .navbar-primary > ul{
             background: hsl(0 0% 100% / 0.1);
             backdrop-filter: blur(0.5rem);

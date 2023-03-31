@@ -1,6 +1,7 @@
 import { generate_app, modify_html } from "./modules/html.js"
 // import { PATHS } from "./data/routes.js"
 import header  from "../js/components/header.js"
+import footer from "./components/footer.js"
 import { Router, routes } from "./modules/router.js"
 
 export function layaout(language) {
@@ -13,8 +14,8 @@ export function layaout(language) {
         </header>
         <main id="main">
         </main>
-        <footer>
-            {footer()}
+        <footer class='footer'>
+            ${footer()}
         </footer>
     `)
         ?
