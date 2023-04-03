@@ -13,9 +13,11 @@
 
     <link rel="stylesheet" href="{{url_for('static', filename='styles/home.css')}}">
 
-    <!-- <script type="text/javascript">
-        console.log('/{{get_path}}')
-    </script> -->
+    <script type="text/javascript">
+        window.api_url = '{{get_url}}'
+        
+        console.log('{{get_url}}')
+    </script>
 </head>
 <body>
     <noscript>

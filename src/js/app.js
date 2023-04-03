@@ -1,32 +1,23 @@
 import { layaout } from "./code_flow.js"
-import { languages } from "./data/web.js"
-import { local_storage, history_path } from "./modules/utils.js"
-
-import { Router, routes } from "./modules/router.js"
+import { create_MK } from "./events/MK_global_object.js"
 
 
+onload = async()=>{
 
+    // Global Object MK
+    await create_MK()
 
-onload = ()=>{
-
-    window.MK = {}
-    MK.settings = {}
-    MK.router = new Router()
-    MK.router.add_routes(routes)
-
+    const languages = MK.languages()
 
     MK.router.exist_route(location.pathname)
         ?(()=>{
-            if (local_storage.get(languages.default.local_storage_name) === false) {
-                local_storage.post(languages.default.local_storage_name, languages.default.default_value_language)
+            if (MK.local_storage.get(languages.default.local_storage_name) === false) {
+                MK.local_storage.post(languages.default.local_storage_name, languages.default.default_value_language)
             }
             
-            MK.settings.language = local_storage.get(languages.default.local_storage_name)
+            MK.settings.language = MK.local_storage.get(languages.default.local_storage_name)
 
-            const path = new history_path(location.host)
-            path.change_path(location.pathname, document.title)
-        
-            // console.log(path.get_history())
+            MK.history.change_path(location.pathname, document.title)
             
             layaout(MK.settings.language)
 

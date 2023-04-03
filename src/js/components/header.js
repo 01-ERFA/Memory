@@ -1,6 +1,8 @@
-import { languages } from "../data/web.js"
+
 
 const header = (language)=>{
+
+    const languages = MK.languages()
 
     function title(language, data) {
         switch (language) {

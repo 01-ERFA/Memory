@@ -1,7 +1,5 @@
-import { languages } from "../data/web.js";
-
 const home = (language)=>{
-
+    const languages = MK.languages()
 
     function title(language, data){
         switch (language) {
@@ -25,7 +23,7 @@ const home = (language)=>{
 
         <div class='home'>
             <h1 class='title'>
-                ${title(language, languages.home)}
+                ${title(MK.settings.language, languages.home)}
             </h1>
 
 
