@@ -8,7 +8,7 @@ export function layaout() {
     
     app.add_html(`
         <header>
-            ${header(MK.settings.language)}
+            ${header()}
         </header>
         <main id="main">
         </main>

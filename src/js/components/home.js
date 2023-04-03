@@ -1,4 +1,4 @@
-const home = (language)=>{
+const home = ()=>{
     const languages = MK.languages()
 
     function title(language, data){

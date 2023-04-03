@@ -1,8 +1,6 @@
 
 
-const header = (language)=>{
-
-    const languages = MK.languages()
+const header = (language = MK.settings.language, languages = MK.languages())=>{
 
     function title(language, data) {
         switch (language) {
