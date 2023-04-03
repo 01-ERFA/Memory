@@ -11,22 +11,17 @@ export class Router {
             return false
         }
         if (Array.isArray(routes)) {
-            console.log(this._PATHS)
             routes.map((item)=>{
                 validation_route(item)
                     ?this._PATHS.push(item)
                     :false
             })
-            console.log(this._PATHS)
 
         }
         if (typeof routes === 'object' && !Array.isArray(routes)) {
-            console.log(this._PATHS)
             validation_route(routes)
                 ?this._PATHS.push(routes)
                 :false
-            console.log(this._PATHS)
-            
         }
     }
 

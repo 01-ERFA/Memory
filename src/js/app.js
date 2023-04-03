@@ -19,7 +19,7 @@ onload = async()=>{
 
             MK.history.change_path(location.pathname, document.title)
             
-            layaout(MK.settings.language)
+            layaout()
 
         })()
         // :window.location.href = window.location.protocol + '//' + window.location.hostname;

@@ -2,13 +2,13 @@ import { generate_app, modify_html } from "./modules/html.js"
 import header  from "../js/components/header.js"
 import footer from "./components/footer.js"
 
-export function layaout(language) {
+export function layaout() {
 
     const app = new modify_html(generate_app())
     
     app.add_html(`
         <header>
-            ${header(language)}
+            ${header(MK.settings.language)}
         </header>
         <main id="main">
         </main>
