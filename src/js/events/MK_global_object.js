@@ -5,7 +5,7 @@ import { general_requests } from "./request.js"
 import { local_storage, history_path } from "../modules/utils.js"
 // data
 import { routes } from "../data/js/routes.js"
-import { languages } from "../data/js/languages.js"
+import { text_content } from "../data/js/text_content.js"
 
 
 export async function create_MK() {
@@ -14,12 +14,13 @@ export async function create_MK() {
 
     
     // create properties
-    MK.languages = undefined
-
+    
     MK.settings = {}
     MK.requests = {}
     MK.requests.general = undefined
-
+    
+    MK.text_content = undefined
+    
     MK.router = undefined
     MK.history = undefined
     
@@ -42,7 +43,7 @@ export async function create_MK() {
 
     // use data
     await MK.router.add_routes(routes)
-    MK.languages = languages
+    MK.text_content = text_content
     
     
     // delete data in HTML var (global)

@@ -1,5 +1,5 @@
 const home = ()=>{
-    const languages = MK.languages()
+    const languages = MK.text_content()
 
     function title(language, data){
         switch (language) {

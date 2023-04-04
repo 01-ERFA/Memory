@@ -7,7 +7,7 @@ onload = async()=>{
     // Global Object MK
     await create_MK()
 
-    const languages = MK.languages()
+    const languages = MK.text_content()
 
     MK.router.exist_route(location.pathname)
         ?(()=>{

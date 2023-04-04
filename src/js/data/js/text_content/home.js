@@ -1,4 +1,4 @@
-export const languages_home = {
+export const tc_home = {
     spanish: {
         title: 'Guardianes de la Memoria'
     },

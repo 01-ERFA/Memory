@@ -1,4 +1,4 @@
-export const languages_header = {
+export const tc_header = {
     spanish: {
         title: 'MK',
         navbar: {

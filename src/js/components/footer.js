@@ -1,7 +1,6 @@
 const footer = ()=>{
 
-    const languages = MK.languages().footer
-    console.log(languages)
+    const languages = MK.text_content().footer
 
     function thx_span(language, data) {
         try {

@@ -1,4 +1,4 @@
-export const languages_footer = {
+export const tc_footer = {
     spanish: {
         message_thank: 'Gracias por visitarnos <3',
         message_repository: 'Ver el repositorio'
