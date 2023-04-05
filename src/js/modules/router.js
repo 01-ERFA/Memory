@@ -68,7 +68,12 @@ export class Router {
         document.title = title
 
         if (load === true) {
-            return this.load(path)
+            const result = this.load(path)
+            if (typeof result === 'string') {
+                return result
+            } else {
+                return false
+            }
         }   
 
     }

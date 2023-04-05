@@ -111,7 +111,6 @@ export class modify_html {
                         return false;
                     // 
                     case 'function':
-                        console.log('switch')
                         return add(tag, value())
                     default:
                         return false
@@ -161,10 +160,4 @@ export function generate_app() {
     // app.setAttribute('id', 'app')
     // body.appendChild(app)
     return document.getElementById('app')
-}
-
-export function create_html() {
-
-
-    return ''
 }

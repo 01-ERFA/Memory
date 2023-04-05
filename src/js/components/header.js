@@ -21,14 +21,15 @@ const header = (language = MK.settings.language, languages = MK.text_content())=
     }
 
     function navbar(language, data) {
-        let events = []
-        let html_result = []
+        const events = []
+        const html_result = []
 
-        function add_event(id, link) {
+        function add_event(id, link, title) {
             document.getElementById(id).addEventListener('click', ()=>{
-                console.log(true);
+                MK.body.change_html(MK.router.change_route(link, title, true))
+                    ?console.log('html move')
+                    :null
             })
-
             document.getElementById(id).removeAttribute('id')
         }
 
@@ -38,6 +39,7 @@ const header = (language = MK.settings.language, languages = MK.text_content())=
                     events.push({
                         id: `add_event_navbar_${index}`,
                         link: item.link,
+                        title: item.title
                     })
                     html_result.push(`
                         <li>
@@ -72,13 +74,19 @@ const header = (language = MK.settings.language, languages = MK.text_content())=
                 
         setTimeout(() => {
             for (let index = 0; index < events.length; index++) {
-                add_event(events[index].id, events[index].link)
+                add_event(events[index].id, events[index].link, events[index].title)
             }
         });
         return html_result.join(' ')
     }
 
     setTimeout(() => {
+
+        document.querySelector('.navbar-primary').querySelector('.title').addEventListener('click', ()=>{
+            MK.body.change_html(MK.router.change_route('/', 'Memory', true))
+                ?console.log('html move x2')
+                :null
+        })
         
         const mobile_menu = document.getElementById('mobile-menu')
         const menu = document.querySelector('.navbar-primary').querySelector('ul')

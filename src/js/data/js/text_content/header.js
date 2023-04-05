@@ -4,7 +4,8 @@ export const tc_header = {
         navbar: {
             Games: {
                 name:'Juegos',
-                link: 'games'
+                link: '/games',
+                title: 'Memory: games'
             }
         }
     }, 
@@ -13,7 +14,8 @@ export const tc_header = {
         navbar: {
             Games: {
                 name:'VideoGames',
-                link: 'games'
+                link: '/games',
+                title: 'Memory: games'
             }
         }
     }

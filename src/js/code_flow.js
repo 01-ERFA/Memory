@@ -20,6 +20,9 @@ export function layaout() {
             (()=>{
                 const main = new modify_html(document.getElementById('main'))
                 main.add_html(MK.router.load(location.pathname))
+
+                // main Global
+                MK.add_element('body', main)
             })()
         :
             (()=>{

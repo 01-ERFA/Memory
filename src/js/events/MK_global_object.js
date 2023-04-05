@@ -24,7 +24,7 @@ export async function create_MK() {
     MK.router = undefined
     MK.history = undefined
     
-    MK.add = undefined
+    MK.add_element = undefined
     MK.local_storage = undefined
 
 
@@ -54,5 +54,10 @@ export async function create_MK() {
 
     
     // function to add elements
+    function add_element(name, element) {
+        MK[name] = element
+    }
+
+    MK.add_element = add_element
 
 }
