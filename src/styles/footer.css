@@ -11,6 +11,10 @@
 .footer * {
     color: #e5cfcf;
 }
+
+.footer a, .footer a:visited {
+    text-decoration: underline;
+}
  
 @media (min-width: 760px) {
     .footer {

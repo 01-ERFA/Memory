@@ -30,6 +30,10 @@
     margin-right: 1rem;
 }
 
+.navbar-primary > ul > li > button{
+    color: aliceblue;
+}
+
 .navbar-primary > ul > div {
     display: none;
 }

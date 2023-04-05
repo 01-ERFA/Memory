@@ -21,29 +21,61 @@ const header = (language = MK.settings.language, languages = MK.text_content())=
     }
 
     function navbar(language, data) {
-        let result = []
+        let events = []
+        let html_result = []
+
+        function add_event(id, link) {
+            document.getElementById(id).addEventListener('click', ()=>{
+                console.log(true);
+            })
+
+            document.getElementById(id).removeAttribute('id')
+        }
+
+        function load_the_result(array) {
+            if (Array.isArray(array)) {
+                array.map((item, index)=>{
+                    events.push({
+                        id: `add_event_navbar_${index}`,
+                        link: item.link,
+                    })
+                    html_result.push(`
+                        <li>
+                            <button id='add_event_navbar_${index}'>
+                                ${item.name}
+                            </button>
+                        </li>`
+                    )
+                })
+            }
+        }
+
         switch (language) {
             case 'english':
                 if (Array.isArray(data.english.navbar)) {
-                    data.english.navbar.map((item)=>result.push(`<li>${item}</li>`))
+                    load_the_result(data.english.navbar)
                 } else if(typeof data.english.navbar === 'object' && !Array.isArray(data.english.navbar)){
-                    Object.values(data.english.navbar).map((item)=>result.push(`<li>${item.name}</li>`))
+                    load_the_result(Object.values(data.english.navbar))
                 }
-                result = result.join(' ')
-                return result
+                break;
             case 'spanish':
                 if (Array.isArray(data.spanish.navbar)) {
-                    data.spanish.navbar.map((item)=>result.push(`<li>${item}</li>`))
+                    load_the_result(data.spanish.navbar)
                 } else if(typeof data.spanish.navbar === 'object' && !Array.isArray(data.spanish.navbar)){
-                    Object.values(data.spanish.navbar).map((item)=>result.push(`<li>${item.name}</li>`))
+                    load_the_result(Object.values(data.spanish.navbar))
                 }
-                result = result.join(' ')
-                return result
-            default:
-                return navbar('english', data)
-        }
-
-
+                break;
+                default:
+                    return navbar('english', data)
+                }
+                
+                
+        setTimeout(() => {
+            for (let index = 0; index < events.length; index++) {
+                add_event(events[index].id, events[index].link)
+            }
+        });
+        return html_result.join(' ')
     }
 
     setTimeout(() => {
@@ -63,7 +95,7 @@ const header = (language = MK.settings.language, languages = MK.text_content())=
         }
         mobile_menu.addEventListener('click',()=>button_mobile())
         menu.querySelector('div').querySelector('button').addEventListener('click',()=>button_mobile())
-    }, 200);
+    });
 
     return `
         <nav class="navbar-primary">

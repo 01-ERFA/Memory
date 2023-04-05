@@ -50,7 +50,7 @@ export class Router {
         }
 
         if (result === '**M&K_error**M&K_error') {
-            window.location.href = window.location.protocol + '//' + window.location.hostname;
+            // window.location.href = window.location.protocol + '//' + window.location.hostname;
         } else {
             try {
                 return result.templante()
@@ -60,5 +60,16 @@ export class Router {
         }
 
         return false
+    }
+
+    change_route(path = '/error/not_exist', title=document.title, load=false) {
+
+        history.pushState({}, null, path);
+        document.title = title
+
+        if (load === true) {
+            return this.load(path)
+        }   
+
     }
 }
