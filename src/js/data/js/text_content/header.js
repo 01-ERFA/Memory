@@ -6,6 +6,11 @@ export const tc_header = {
                 name:'Juegos',
                 link: '/games',
                 title: 'Memory: games'
+            },
+            Settings: {
+                name: 'Configuración',
+                link: '/settings',
+                title: null
             }
         }
     }, 
@@ -16,6 +21,11 @@ export const tc_header = {
                 name:'VideoGames',
                 link: '/games',
                 title: 'Memory: games'
+            },
+            Settings: {
+                name: 'Settings',
+                link: '/settings',
+                title: null
             }
         }
     }

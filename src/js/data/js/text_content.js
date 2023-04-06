@@ -13,6 +13,7 @@ export const text_content = ()=>{
 
         default: {
             local_storage_name: 'M_language',
-            default_value_language: 'english'
+            default_value_language: 'english', 
+            title: 'Memory'
         }
 }}

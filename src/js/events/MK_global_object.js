@@ -18,6 +18,9 @@ export async function create_MK() {
     MK.settings = {}
     MK.requests = {}
     MK.requests.general = undefined
+    MK.requests.css = {}
+    MK.requests.css.add = undefined
+    MK.requests.css.remove = undefined
     
     MK.text_content = undefined
     
@@ -48,9 +51,28 @@ export async function create_MK() {
     
     // delete data in HTML var (global)
     delete window.api_url
+
+    document.querySelector('head').querySelector('script').remove()
     
     // functions
     MK.local_storage = local_storage
+
+    // functions css
+
+    function add_css(path) {
+        if (typeof path === 'string') {
+            const cssLink = document.createElement("link");
+            cssLink.rel = "stylesheet";
+            cssLink.href = path;
+            cssLink.type = "text/css";
+            document.head.appendChild(cssLink);
+
+            return true
+        }
+        return false
+    }
+
+    MK.requests.css.add = add_css
 
     
     // function to add elements

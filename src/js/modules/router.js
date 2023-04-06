@@ -65,7 +65,11 @@ export class Router {
     change_route(path = '/error/not_exist', title=document.title, load=false) {
 
         history.pushState({}, null, path);
-        document.title = title
+        if (typeof title === 'string') {
+            document.title = title
+        } else {
+            document.title = MK.text_content().default.title
+        }
 
         if (load === true) {
             const result = this.load(path)
@@ -75,6 +79,5 @@ export class Router {
                 return false
             }
         }   
-
     }
 }

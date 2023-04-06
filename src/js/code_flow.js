@@ -21,6 +21,8 @@ export function layaout() {
                 const main = new modify_html(document.getElementById('main'))
                 main.add_html(MK.router.load(location.pathname))
 
+                // MK.router.change_route(location.pathname, , false) // replace title
+
                 // main Global
                 MK.add_element('body', main)
             })()
