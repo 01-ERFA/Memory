@@ -1,0 +1,45 @@
+.mg {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.mg > h1 {
+    width: 100%;
+    text-align: center;
+}
+
+.mg > h3 {
+    margin-left: 3%;
+    margin-bottom: 4%;
+}
+
+.mg > #mg_grid{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+} 
+
+.mg > #mg_grid > * {
+    margin: 5px;
+}
+
+.mg > #mg_grid > img {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+@media (min-width: 760px) {
+    .mg > #mg_grid > img {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+    }
+}
+@media (min-width: 1300px) {
+    .mg > #mg_grid > img {
+        width: 400px;
+        height: 400px;
+    }
+}

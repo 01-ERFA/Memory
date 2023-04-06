@@ -12,3 +12,21 @@ export function auto_select_language(language = 'english') {
         return auto_select_language()
     }
 }
+
+export function create_board(grid, cards, path_game, default_img, event, size) {
+    if (Array.isArray(cards)) {
+        for (let index = 0; index < cards.length; index++) {
+            let card = document.createElement('img')
+            card.setAttribute('src', `${path_game}${default_img}`)
+            card.setAttribute('data-id', `mg_${index}`)
+            card.addEventListener('click', event)
+            if (document.contains(grid)) {
+                grid.appendChild(card)
+            }
+        }
+    }
+}
+
+export function hidden_footer() {
+    document.querySelector('footer').style.display = 'none'
+}
