@@ -27,6 +27,8 @@ export function create_board(grid, cards, path_game, default_img, event, size) {
     }
 }
 
-export function hidden_footer() {
-    document.querySelector('footer').style.display = 'none'
+export function change_screen (screen = ()=>{}){
+    if (typeof screen === 'function') {
+        screen()
+    }
 }
