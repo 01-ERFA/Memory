@@ -11,9 +11,8 @@ const memory_game = ()=>{
     const cardsWon = []
 
     let imgs_game = get_imgs('pokemons').concat(get_imgs('pokemons'))
-    
-    if (Array.isArray(imgs_game)) {
 
+    if (Array.isArray(imgs_game)) {
         imgs_game = shuffleArray(imgs_game, 3)
     }
     function shuffleArray(array, iterations = 2) {
@@ -32,10 +31,15 @@ const memory_game = ()=>{
         const cardID = this.getAttribute('data-id')
         const cardID_num = cardID.replace('mg_', '')
 
+        if (cardID_num === cardsChosenId[0] || cardsWon.length === imgs_game.length/2) {
+            return false;
+        }
         cardsChosen.push(imgs_game[cardID_num].name)
         cardsChosenId.push(cardID_num)
 
         this.setAttribute('src', `${path_game}${imgs_game[cardID_num].img}`)
+
+
 
         if (cardsChosen.length === 2) {
             setTimeout(() => {
